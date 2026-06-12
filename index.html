@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pequena Homenagem</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <center>
+  <main>
+    <section id="bomdia" class="screen active">
+      <h1>Bom dia ☀️</h1>
+      <p>Uma pequena homenagem para você.</p>
+      <div class="controls">
+        <button id="open-surprise">Abrir Surpresa ✨</button>
+      </div>
+      <div class="controls audio-controls">
+        <button id="toggle-music">Tocar música</button>
+      </div>
+    </section>
+
+    <section id="intro" class="screen">
+      <img src="assets/images/capa.jpg" alt="Capa" class="cover">
+      <div id="typing"></div>
+      <div class="controls"><button class="next">Próximo</button></div>
+    </section>
+
+    <section id="phrases" class="screen">
+      <h2>Frases</h2>
+      <div id="phrases-container"></div>
+      <div class="controls"><button class="next">Próximo</button></div>
+    </section>
+
+    <section id="photo" class="screen">
+      <h2>Imagem Especial</h2>
+      <img src="assets/images/foto1.jpg" alt="Especial" class="special-photo">
+      <div class="controls"><button class="next">Próximo</button></div>
+    </section>
+
+    <section id="surprise" class="screen">
+      <div class="controls"><button class="surprise-btn" id="letterBtn">💌 Abrir mensagem</button></div>
+      <div class="letter" id="letter">
+        <p>Talvez eu não diga isso tantas vezes quanto deveria.</p>
+        <p>Mas você é uma das pessoas mais importantes da minha vida.</p>
+        <p>Seu jeito, seu sorriso e sua presença tornam meus dias melhores.</p>
+        <p>E eu queria que você soubesse disso.</p>
+      </div>
+       <img src="assets/images/uma flor pra tu mãe minha sogra.jpg" alt="Especial" class="special-photo">
+    </section>
+
+    <section id="final" class="screen">
+      <h2>Você é Especial ❤️</h2>
+      <p>Obrigado por existir.</p>
+      <div class="controls"><button id="restart">Ver novamente</button></div>
+       <img src="assets/images/caveira.jpg" alt="Especial" class="special-photo">
+    </section>
+  </main>
+
+  <audio id="bg-music" src="assets/audio/musica.mp3" loop preload="none">Seu navegador não suporta áudio.</audio>
+  <script src="data/messages.js"></script>
+  <script src="assets/js/typing.js"></script>
+  <script src="assets/js/hearts.js"></script>
+  <script src="assets/js/main.js"></script>
+</center>
+</body>
+</html>

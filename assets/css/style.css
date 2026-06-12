@@ -1,0 +1,75 @@
+:root{
+  --bg-deep:#0b0a1a;
+  --bg-plum:#1d1233;
+  --gold:#e8c27e;
+  --rose:#f3a6b2;
+  --cream:#f6f1e7;
+  --muted:#b9aed1;
+  --max-width:1100px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Times New Roman',serif; background:var(--bg-deep); color:var(--cream); overflow-x:hidden; padding:24px; display:flex; justify-content:center}
+main{width:100%; max-width:var(--max-width)}
+
+/* telas */
+.screen{min-height:100vh; padding:3.2rem 2rem; border-radius:14px}
+
+h1,h2{color:var(--gold); margin:0 0 12px}
+button{background:var(--gold); color:var(--bg-deep); border:0; padding:10px 16px; border-radius:999px; cursor:pointer}
+.cover, .hero-img, .special-photo{width:min(420px,80vw); height:auto; border-radius:12px; margin-bottom:12px; box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+
+/* typewriter */
+.typewriter, #typing{max-width:42ch; font-size:clamp(1.05rem, 3vw, 1.45rem); line-height:1.7; color:var(--muted); min-height:4.5em}
+.typewriter .cursor, #typing::after{display:inline-block; width:2px; background:var(--gold); margin-left:6px; animation:blink 0.9s step-end infinite; content:''}
+@keyframes blink{50%{opacity:0}}
+
+/* ---------- Estrelas / partículas ---------- */
+.stars{position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none}
+.star{position:absolute; background:var(--gold); border-radius:50%; opacity:0.6; animation:twinkle ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:0.15; transform:scale(0.8);} to{opacity:0.9; transform:scale(1.3);}}
+
+/* ---------- Mensagens (cards) ---------- */
+#phrases-container, .msg{max-width:48ch; margin:auto; text-align:center}
+.msg{opacity:0; transform:translateY(28px); transition:opacity 1s ease, transform 1s ease}
+.msg.visible{opacity:1; transform:translateY(0)}
+.msg p{font-style:italic; color:var(--cream)}
+
+/* ---------- Interativa e foto ---------- */
+.photo-wrap{position:relative; width:min(280px,70vw); aspect-ratio:4/5}
+.photo-wrap img{width:100%; height:100%; object-fit:cover; border-radius:14px; border:3px solid rgba(232,194,126,0.06)}
+.hero-img, .special-photo{width:min(420px,80vw); height:auto; border-radius:14px; border:3px solid rgba(232,194,126,0.06); box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+.float-heart{position:absolute; font-size:1.4rem; color:var(--rose); pointer-events:none; animation:floatUp 1.6s ease-out forwards}
+@keyframes floatUp{0%{opacity:1; transform:translate(0,0) scale(0.8);} 100%{opacity:0; transform:translate(var(--dx), -120px) scale(1.2);}}
+
+/* ---------- Chuva de corações ---------- */
+.heart-rain{position:fixed; inset:0; pointer-events:none; z-index:50; overflow:hidden}
+.falling-heart{position:absolute; top:-10%; font-size:1.2rem; color:var(--rose); opacity:0.85; animation:fall linear forwards}
+@keyframes fall{to{ transform:translateY(110vh) rotate(40deg); opacity:0;}}
+
+/* ---------- Carta / surpresa ---------- */
+.surprise-btn{font-family:Georgia,serif; font-size:1.05rem; letter-spacing:0.08em; color:var(--bg-deep); background:var(--gold); border:none; padding:1rem 2.4rem; border-radius:999px; cursor:pointer; box-shadow:0 10px 30px rgba(232,194,126,0.3)}
+.surprise-btn:hover{transform:translateY(-3px)}
+.letter{max-width:38ch; background:rgba(246,241,231,0.04); border:1px solid rgba(232,194,126,0.12); border-radius:16px; padding:2.4rem 2rem; backdrop-filter:blur(6px); opacity:0; transform:translateY(20px) scale(0.97); transition:opacity 0.9s ease, transform 0.9s ease; max-height:0; overflow:hidden}
+.letter.open{opacity:1; transform:translateY(0) scale(1); max-height:600px}
+.letter p{font-size:1.05rem; line-height:1.85; color:var(--cream); text-align:left; font-style:italic}
+
+/* Centraliza botões e controles nas seções */
+.controls{display:flex; justify-content:center; gap:12px; margin-top:1.6rem}
+.controls button{min-width:140px}
+
+/* ---------- Final ---------- */
+.final-stage{position:relative; width:100%; max-width:50ch; height:8rem; display:flex; align-items:center; justify-content:center}
+.final-text{position:absolute; font-size:clamp(1.1rem, 3.4vw, 1.7rem); line-height:1.6; color:var(--muted); transition:opacity 1.2s ease}
+.final-text.reveal{font-family:'Playfair Display', serif; font-size:clamp(1.6rem, 5vw, 2.8rem); color:var(--cream); opacity:0; text-shadow:0 0 0 rgba(232,194,126,0); transition:opacity 1.6s ease, text-shadow 1.6s ease}
+.final-text.reveal.show{opacity:1; text-shadow:0 0 40px rgba(232,194,126,0.55)}
+
+@media (max-width:600px){
+  body{padding:12px}
+  main{padding:0}
+  .screen{padding:18px}
+  #phrases-container{font-size:1rem}
+}
+
+@media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important}}

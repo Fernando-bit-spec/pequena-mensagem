@@ -1,0 +1,6 @@
+@media (max-width:600px){
+  body{padding:12px}
+  main{padding:0}
+  .screen{padding:18px}
+  #phrases-container{font-size:1rem}
+}
